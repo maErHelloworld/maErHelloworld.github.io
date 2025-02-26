@@ -283,7 +283,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     .skill-item {
         height: 150px;
         padding: 15px;
-        border-radius: 15px;
+        border-radius: 10vh;
     }
 }
 
@@ -299,7 +299,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     .skill-item {
         height: 120px;
         padding: 10px;
-        border-radius: 20px;
+        border-radius: 7%;
     }
 }
 
