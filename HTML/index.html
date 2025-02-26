@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martim Pinto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="container">
+        <video class="background-video" autoplay loop muted>
+            <source src="anim.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+
+        <audio class="background-audio" autoplay loop muted>
+            <source src="audio.mp3" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+       
+        <div class="content-box">
+            <a href="aboutme.html" class="profile-link">
+                <img src="pfp.jpg" alt="Profile Picture" class="profile-picture" id="profilePic">
+            </a>
+            <h1>Martim Pinto</h1>
+            <p>Founder & Developer of "Sapius" | Software Development Student| Amateur Photographer | Former Bosch Intern | AI & Tech Enthusiast</p>
+
+            <div class="links-container">
+                <a href="https://www.youtube.com/@FruitcakeFM" class="link-item" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.twitch.tv/fruitcakefm" class="link-item" target="_blank">
+                    <i class="fab fa-twitch"></i>
+                </a>
+                <a href="https://www.tiktok.com/@martimfpinto" class="link-item" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://github.com/maErHelloworld" class="link-item" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.paypal.com/paypalme/spaghetti1" class="link-item" target="_blank">
+                    <i class="fab fa-paypal"></i>
+                </a>
+                <a href="https://www.instagram.com/martimfpinto" class="link-item" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+       
+        document.addEventListener('DOMContentLoaded', () => {
+
+    function unmuteAudio() {
+        const audio = document.querySelector('.background-audio');
+        if (audio && audio.paused) {
+            audio.muted = false;  
+            audio.play().catch(function(error) {
+                console.log("Autoplay failed:", error);
+            });
+        }
+    }
+
+    setTimeout(unmuteAudio, 1000);
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') {
+            unmuteAudio(); 
+        }
+    });
+});
+
+document.getElementById('profilePic').addEventListener('click', function() {
+    const audio = document.querySelector('.background-audio');
+    if (audio) {
+        audio.muted = false;  
+        audio.play().catch(function(error) {
+            console.log("Error unmuting audio:", error);
+        });
+    }
+});
+
+
+    </script>
+</body>
+</html>

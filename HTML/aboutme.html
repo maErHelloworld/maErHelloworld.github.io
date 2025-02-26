@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Martim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="boutme.css">
+</head>
+<body>
+    <a href="index.html">
+        <img src="back.png" alt="Return" class="backPNG">
+      </a>
+    <div class="main-container">
+        <div class="profile-section">
+            <img src="pfp.jpg" alt="Profile Picture" class="profile-picture">
+            <h1>Martim Pinto</h1>
+            <p>Software Development Student</p>
+            <p>Content Creation</p>
+        </div>
+        
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>Hello! I'm Martim Pinto, a technology enthusiast with a deep passion for programming and digital content creation.I try to adapt and learn the ways of the programming world, where I’m always diving into new projects, sharpening my skills, and staying on top of the latest developments. Whether it's building something from scratch or optimizing existing systems, I love the challenge and creativity that comes with it.</p>
+
+            <div class="skills-section">
+                <div class="skills-grid">
+                    <div class="skill-item"><img src="js.png" alt="JavaScript" class="skill-image"></div>
+                    <div class="skill-item"><img src="htmlcss.webp" alt="HTML & CSS" class="skill-image"></div>
+                    <div class="skill-item"><img src="nodejs.jpg" alt="Node.js" class="skill-image"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <div class="links-container">
+                <a href="https://www.instagram.com/martimfpinto/" target="_blank">
+                    <img src="instagram.png" alt="Return" class="backPNG" >
+                  </a>
+                
+                  <img src="mail.png" alt="Email Icon" class="backPNG" id="copiarmail" onclick="copyText()">
+                  
+                    <img src="wp.png" alt="Return" class="backPNG" id="copiarWPP" onclick="copyWPP()">
+            </div>      
+    </div>
+    <script>
+        function copyText() {
+            const email = "martim.fpinto2735@gmail.com";
+            navigator.clipboard.writeText(email)
+                .then(() => {
+                    document.getElementById("status").innerText = "Email copiado!";
+                })
+                .catch(err => {
+                    console.error("Erro ao copiar: ", err);
+                });
+        }
+
+
+        function copyWPP(){
+const wpp = "+351912651710"
+navigator.clipboard.writeText(wpp);
+        }
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* Resetando margens e preenchimentos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Segoe UI, sans-serif;
+}
+
+/* Estilos para o contêiner principal */
+.container {
+    position: relative;
+    height: 100vh; /* Usamos altura relativa à altura da tela */
+    width: 100%;
+    overflow: hidden;
+    animation: fadeIn 3s ease-out forwards; /* 3s é o tempo que a animação leva para terminar */
+    opacity: 1; /* Inicialmente invisível */
+
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.profile-expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;  /* Make it cover the full screen */
+    height: 100vh; /* Same for height */
+    object-fit: cover;
+    z-index: 1000; /* Make sure it's above other elements */
+    transition: all 1s ease-in-out; /* Smooth transition */
+    cursor: pointer;
+}
+
+
+
+/* Hover effect on profile picture */
+.profile-picture:hover {
+    transform: scale(1.1);
+}
+
+/* Estilos para o vídeo de fundo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+}
+
+/* Estilos para o conteúdo */
+.content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo fosco com opacidade ajustada */
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    max-width: 90%; /* Responsivo, ocupa no máximo 90% da tela */
+    width: 600px; /* Largura fixa para telas grandes */
+
+}
+
+/* Estilos para o título */
+.content-box h1 {
+    font-size: 2.5rem; /* Ajusta o tamanho para telas menores */
+    margin-bottom: 15px;
+}
+
+/* Estilos para o texto */
+.content-box p {
+    font-size: 1.3rem; /* Tamanho menor para textos em dispositivos móveis */
+    line-height: 1.6;
+}
+
+/* Estilos para os links com ícones */
+.links-container {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones */
+    gap: 30px; /* Espaçamento entre os ícones */
+    margin-top: 30px; /* Espaço entre o conteúdo e os links */
+}
+
+.link-item {
+    font-size: 2rem; /* Tamanho do ícone */
+    color: white;
+    text-decoration: none; /* Remove o sublinhado */
+    transition: transform 0.3s ease, color 0.3s ease; /* Animação de escala e cor */
+}
+
+.link-item i {
+    display: inline-block;
+    color: white; /* Ensure the color is visible */
+}
+
+.link-item:hover {
+    transform: scale(1.2); /* Aumenta o tamanho do ícone */
+    color: #6b01d5; /* Cor de hover */
+}
+
+/* Media Queries para dispositivos menores */
+@media (max-width: 768px) {
+    .content-box {
+        width: 80%; /* Ajusta para 80% da largura da tela em dispositivos menores */
+        padding: 15px;
+        
+    }
+
+    .content-box h1 {
+        font-size: 1.8rem; /* Ajusta o tamanho do título */
+    }
+
+    .content-box p {
+        font-size: 0.9rem; /* Ajusta o tamanho do texto */
+    }
+    .link-item{
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .content-box {
+        width: 90%; /* Ajusta para 90% da largura da tela em smartphones */
+        padding: 10px;
+    }
+
+    .content-box h1 {
+        font-size: 1.6rem; /* Ajusta o tamanho do título para telas muito pequenas */
+    }
+
+    .content-box p {
+        font-size: 0.85rem; /* Ajusta o texto para telas muito pequenas */
+    }
+
+    .link-item{
+        font-size: 2.5rem;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0; /* Começa invisível */
+    }
+    100% {
+        opacity: 1; /* Finaliza totalmente visível */
+    }
+}
