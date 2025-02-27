@@ -158,7 +158,6 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     margin-bottom: 10vh;
 
 }
-
 .about-content p {
     font-size: 1.8rem;
     margin-bottom: 30px;
@@ -223,6 +222,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
 
 .skill-item:hover img {
     transform: scale(1.1);
+   border-radius: 4.4%;
 }
 
 /* Contact Section */

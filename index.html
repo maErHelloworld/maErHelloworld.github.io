@@ -9,14 +9,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
     <div class="container">
-        <video class="background-video" autoplay loop muted>
-            <source src="anim.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
+        <div class="background-video-container">
+            <video class="background-video" autoplay loop muted>
+                <source src="anim.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+        </div>
 
         <audio class="background-audio" autoplay loop muted>
             <source src="audio.mp3" type="audio/mp3">
@@ -52,7 +56,36 @@
             </div>
         </div>
     </div>
+
     <script>
+    window.addEventListener("scroll", function () {
+    const image = document.querySelector(".separator");
+    const scrollPosition = window.scrollY;
+
+    // Parallax effect (Moves the image upwards)
+    let translateY = scrollPosition * 0.7; // Adjust speed by changing 0.5
+
+    // Apply transform 
+
+    /* <div class="separator"></div>
+
+<div class="panel">
+    <img src="sapius.webp" alt="Sapius AI">
+    <div class="panel-content">
+        <h2>Sapius - The Future of AI on Discord</h2>
+        <p>Sapius is an advanced AI bot integrated into Discord, offering intelligent responses and image generation. Support this project so we can continue innovating!</p>
+        <p> (To Know more See the Full Project idea Discord Sapius APP)</p>
+        
+        <p class="extra-text">The nature of this Funding is to mantaing the Bot running, it costs money to have it powered and use openAI API Calls, in order for us to be able to have it on to public, we need some kind of funding prepared to be able to handle the mass user interaction we are expecting it to have</p>
+
+    </div>
+    <a href="https://gofund.me/c348b17a" target="_blank">GoFundME</a>
+
+</div>
+*/
+    image.style.transform = `translateY(${translateY}px)`;
+});
+
        
         document.addEventListener('DOMContentLoaded', () => {
 
