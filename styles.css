@@ -19,11 +19,34 @@ body, html {
     overflow: hidden;
     animation: fadeIn 3s ease-out forwards;
     opacity: 1;
+    position: relative; /* ensure the button is positioned relative to this container */
 }
+#play-btn {
+    position: fixed;
+    top: 1rem;      /* 2rem above the container */
+    left: 1rem;      /* 1rem from the left edge */
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+  }
+  #play-btn svg {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  #play-btn:hover svg {
+    fill: #5d00b9;
+    transform: scale(1.2);
 
+
+  }
+  
 .profile-picture {
     width: 120px;
     height: 120px;
+    margin-top: 2vh;
     border-radius: 50%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;

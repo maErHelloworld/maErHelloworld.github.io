@@ -22,13 +22,18 @@
                 Seu navegador não suporta o elemento de vídeo.
             </video>
         </div>
-
-        <audio class="background-audio" autoplay loop muted>
+       
+        <audio class="background-audio" autoplay muted loop>
             <source src="audio.mp3" type="audio/mp3">
             Seu navegador não suporta o elemento de áudio.
         </audio>
-       
+
         <div class="content-box">
+            <button id="play-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+                </svg>
+              </button>
             <a href="aboutme.html" class="profile-link">
                 <img src="pfp.jpg" alt="Profile Picture" class="profile-picture" id="profilePic">
             </a>
@@ -61,7 +66,7 @@
     </div>
 
     <script>
-    window.addEventListener("scroll", function () {
+ /*   window.addEventListener("scroll", function () {
     const image = document.querySelector(".separator");
     const scrollPosition = window.scrollY;
 
@@ -85,42 +90,46 @@
     <a href="https://gofund.me/c348b17a" target="_blank">GoFundME</a>
 
 </div>
-*/
+
     image.style.transform = `translateY(${translateY}px)`;
 });
+*/
 
-       
-        document.addEventListener('DOMContentLoaded', () => {
 
-    function unmuteAudio() {
-        const audio = document.querySelector('.background-audio');
-        if (audio && audio.paused) {
-            audio.muted = false;  
-            audio.play().catch(function(error) {
-                console.log("Autoplay failed:", error);
-            });
+document.addEventListener('DOMContentLoaded', () => {
+      const audio = document.querySelector('.background-audio');
+      const playButton = document.getElementById('play-btn');
+
+      // Função para tentar reproduzir o áudio e desmutá-lo
+      function playAudio() {
+        if (audio) {
+          audio.muted = false;
+          audio.play().then(() => {
+            console.log("Áudio iniciado!");
+            // Oculta o botão de play caso o áudio seja iniciado com sucesso
+            playButton.style.display = 'none';
+          }).catch(error => {
+            console.log("Erro ao iniciar o áudio:", error);
+            // Se houver erro, o botão permanece visível para que o usuário possa tentar
+          });
         }
-    }
+      }
 
-    setTimeout(unmuteAudio, 1000);
+      // Tenta iniciar o áudio automaticamente ao carregar a página
+      playAudio();
 
-    document.addEventListener('visibilitychange', () => {
+      // Caso o autoplay seja bloqueado, o usuário pode clicar no botão para iniciar o áudio
+      playButton.addEventListener('click', () => {
+        playAudio();
+      });
+
+      // Se a página voltar a ficar visível, tenta reproduzir novamente o áudio
+      document.addEventListener('visibilitychange', () => {
         if (document.visibilityState === 'visible') {
-            unmuteAudio(); 
+          playAudio();
         }
+      });
     });
-});
-
-document.getElementById('profilePic').addEventListener('click', function() {
-    const audio = document.querySelector('.background-audio');
-    if (audio) {
-        audio.muted = false;  
-        audio.play().catch(function(error) {
-            console.log("Error unmuting audio:", error);
-        });
-    }
-});
-
 
     </script>
 </body>
