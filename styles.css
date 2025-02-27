@@ -23,8 +23,8 @@ body, html {
 }
 #play-btn {
     position: fixed;
-    top: 1rem;      /* 2rem above the container */
-    left: 1rem;      /* 1rem from the left edge */
+    top: 1rem;      
+    left: 1rem;      
     background: none;
     border: none;
     cursor: pointer;
@@ -244,6 +244,14 @@ animation: pulseGlow 2s infinite alternate;
         font-size: 2.5rem;
     }
 }
+
+@media (min-width: 1024px) { 
+        #play-btn {
+        top: 2rem;
+        left: 2rem;
+    }
+}
+
 
 @keyframes fadeIn {
     0% {
