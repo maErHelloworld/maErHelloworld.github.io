@@ -68,10 +68,21 @@
                 </a>
                 <a href="https://gofund.me/c37eeaf8" class="link-item" target="_blank">
                     <i class="fas fa-gift"></i>
+                </a>
             </div>
-        </div>
-    </div>
+</div>
 
+</div>
+<div class="image-container">
+  <img src="minecraft.jpg" alt="Imagem abaixo do vídeo">
+  <a href="https://forms.gle/S5YZ2h8WfEQDLXcR8">
+  <img src="clickable.png"  class="clickable-image"    alt="clickable">
+  </a>
+</div>
+
+    </div>
+    
+    
     <script>
  /*   window.addEventListener("scroll", function () {
     const image = document.querySelector(".separator");
@@ -137,6 +148,68 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    //scrolling transition
+    window.addEventListener("scroll", function () {
+    let scrollPosition = window.scrollY;
+    let windowHeight = window.innerHeight;
+    let fadeStart = windowHeight * 0.1;
+    let fadeEnd = windowHeight * 2;
+    let container = document.querySelector(".container");
+    let image = container.querySelector("img");
+    let linksContainer = document.querySelector(".links-container");
+    let contentBox = document.querySelector(".content-box");
+    let backgroundVideo = document.querySelector(".background-video");
+    let backgroundImage = document.querySelector(".image-container");
+
+    if (scrollPosition > fadeStart) {
+        let progress = (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+        progress = Math.min(progress, 1);
+
+        let easedProgress = Math.pow(progress, 0.7);
+
+        container.style.transform = `translateY(-${easedProgress * 70}vh)`;
+        container.style.opacity = `${1 - easedProgress}`;
+        
+        image.style.transform = `translateY(-${easedProgress * 40}vh)`;
+        image.style.opacity = `${1 - easedProgress}`;
+
+        backgroundImage.style.transform = `translateY(-${easedProgress * 40}vh)`;
+
+        linksContainer.style.transform = `translateY(-${easedProgress * 40}vh)`;
+        linksContainer.style.opacity = `${1 - easedProgress}`;
+
+        let links = linksContainer.querySelectorAll("a");
+        links.forEach(link => {
+            link.style.transform = `translateY(-${easedProgress * 20}vh)`;
+            link.style.opacity = `${1 - easedProgress}`;
+        });
+
+        // Aplicando transformação suave na content-box sem afetar a centralização
+        contentBox.style.transform = `translate(-50%, -50%) translateY(-${easedProgress * 60}vh)`;
+        contentBox.style.opacity = `${1 - easedProgress}`;
+        backgroundVideo.style.opacity = `${1 - easedProgress}`;
+
+      } else {
+        container.style.transform = "translateY(0)";
+        container.style.opacity = "1";
+        image.style.transform = "translateY(0)";
+        image.style.opacity = "1";
+        linksContainer.style.transform = "translateY(0)";
+        linksContainer.style.opacity = "1";
+        contentBox.style.transform = "translate(-50%, -50%)";  // Manter a centralização
+        contentBox.style.opacity = "1";
+        backgroundImage.style.transform = "translateY(0)";
+
+        let links = linksContainer.querySelectorAll("a");
+        links.forEach(link => {
+            link.style.transform = "translateY(0)";
+            link.style.opacity = "1";
+        });
+    }
+});
+
+
 
     </script>
 </body>
