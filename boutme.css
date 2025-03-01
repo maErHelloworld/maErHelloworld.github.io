@@ -39,12 +39,28 @@ body {
     height: 100%;
 }
 
+@keyframes bounce {
+    0%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(-4%);
+    }
+    70%{
+        transform: translateY(+4%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
 .profile-picture {
     width: 30vh;
     height: 30vh;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
+    animation: bounce 1.2s ease;
 }
 
 .profile-section h1 {
