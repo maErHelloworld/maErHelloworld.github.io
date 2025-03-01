@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let fadeEnd = windowHeight * 2;
     let container = document.querySelector(".container");
     let image = container.querySelector("img");
-    let linksContainer = document.querySelector(".links-container");
+   // let linksContainer = document.querySelector(".links-container");
     let contentBox = document.querySelector(".content-box");
     let backgroundVideo = document.querySelector(".background-video");
     let backgroundImage = document.querySelector(".image-container");
@@ -177,14 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         backgroundImage.style.transform = `translateY(-${easedProgress * 40}vh)`;
 
-        linksContainer.style.transform = `translateY(-${easedProgress * 40}vh)`;
-        linksContainer.style.opacity = `${1 - easedProgress}`;
+       // linksContainer.style.transform = `translateY(-${easedProgress * 40}vh)`;
+       // linksContainer.style.opacity = `${1 - easedProgress}`;
 
-        let links = linksContainer.querySelectorAll("a");
-        links.forEach(link => {
-            link.style.transform = `translateY(-${easedProgress * 20}vh)`;
-            link.style.opacity = `${1 - easedProgress}`;
-        });
+       // let links = linksContainer.querySelectorAll("a");
+       // links.forEach(link => {
+        //    link.style.transform = `translateY(-${easedProgress * 20}vh)`;
+          //  link.style.opacity = `${1 - easedProgress}`;
+       // });
 
         // Aplicando transformação suave na content-box sem afetar a centralização
         contentBox.style.transform = `translate(-50%, -50%) translateY(-${easedProgress * 60}vh)`;
@@ -196,8 +196,8 @@ document.addEventListener('DOMContentLoaded', () => {
         container.style.opacity = "1";
         image.style.transform = "translateY(0)";
         image.style.opacity = "1";
-        linksContainer.style.transform = "translateY(0)";
-        linksContainer.style.opacity = "1";
+       // linksContainer.style.transform = "translateY(0)";
+       // linksContainer.style.opacity = "1";
         contentBox.style.transform = "translate(-50%, -50%)";  // Manter a centralização
         contentBox.style.opacity = "1";
         backgroundImage.style.transform = "translateY(0)";
