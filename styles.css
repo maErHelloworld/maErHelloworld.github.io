@@ -106,6 +106,27 @@ animation-fill-mode: both;
     cursor: pointer;
 }
 
+.revolut{
+    position: fixed;
+    top: 1rem;      
+    left: 1rem;      
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+
+}
+.revolut i{
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.revolut i:hover{
+    transform: scale(1.1);
+}
+
 /* Hover effect on profile picture */
 .profile-picture:hover {
     transform: scale(1.1);
