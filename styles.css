@@ -129,7 +129,7 @@ animation-fill-mode: both;
 
 /* Hover effect on profile picture */
 .profile-picture:hover {
-    transform: scale(1.1);
+    transform: scale(1.5);
     box-shadow: 0 0 30px rgba(107, 1, 213, 0.8);
 }
 
