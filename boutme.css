@@ -301,7 +301,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     margin-top: 20vh;
     margin-right: auto;
     margin-left: auto;
-    max-width: 10%;
+    max-width: 30%;
 }
 .links-container{
     grid-template-rows: repeat(3, 1fr);
