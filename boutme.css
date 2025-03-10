@@ -305,7 +305,7 @@ padding-bottom: 15px;
     padding: 10px;
     background-color: #636363;
     color: #fff;
-    position: fixed;
+    position: relative;
     width: 100%;
     bottom: 0;
   }
