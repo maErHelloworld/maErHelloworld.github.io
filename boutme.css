@@ -304,6 +304,10 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     max-width: 10%;
 }
 
+.skills-grid{
+    grid-template-columns: 1fr 1fr;
+}
+
 .contact-section h2 {
     font-size: 2rem;
     color: #ffffff;
