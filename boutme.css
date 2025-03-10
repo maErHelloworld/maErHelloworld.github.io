@@ -335,11 +335,6 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
         width: 80%; /* Adjust width for smaller screens */
     }
 
-    .gallery{
-grid-template: repeat(auto-fit, minmax(45%, 1fr));
-
-    }
-
     .profile-section h1 {
         font-size: 2rem;
     }
@@ -367,11 +362,7 @@ grid-template: repeat(auto-fit, minmax(45%, 1fr));
     .main-container {
         width: 95%; /* Adjust width for smaller screens */
     }
-.gallery{
-    grid-template: repeat(auto-fit, minmax(90%, 1fr));
 
-}
-    
     .skills-grid {
         grid-template-columns: 1fr; /* One item per row */
     }
