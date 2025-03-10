@@ -251,7 +251,6 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     height: 70%;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .skills-grid {
@@ -259,6 +258,10 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns side by side */
     gap: 3vh;
+    border-bottom: 3px solid rgba(255, 255, 255);
+border-bottom-left-radius: 3px;
+border-bottom-right-radius: 3px;
+padding-bottom: 15px;
 }
 
 .skills-grid img {
@@ -277,7 +280,10 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     align-items: center;
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-bottom: 15vh;
+
 }
+
 
 .skill-item img {
     width: 100%;
