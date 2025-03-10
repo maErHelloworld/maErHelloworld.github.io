@@ -128,7 +128,7 @@ body {
     border-radius: 10px; /* Round corners of the image */
     transition: transform 0.3s ease; /* Add smooth transition on hover */
     cursor: pointer;
-  
+  max-width: 10vh;
 }
 
   a:hover .backPNG {
@@ -301,6 +301,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     margin-top: 20vh;
     margin-right: auto;
     margin-left: auto;
+    max-width: 15%;
 }
 
 .contact-section h2 {
