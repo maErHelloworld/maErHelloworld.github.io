@@ -301,7 +301,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     margin-top: 20vh;
     margin-right: auto;
     margin-left: auto;
-    max-width: 15%;
+    max-width: 10%;
 }
 
 .contact-section h2 {
