@@ -74,7 +74,14 @@
                     <img src="wp.png" alt="Return" class="backPNG" id="copiarWPP" onclick="copyWPP()">
             </div>      
     </div>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> martimfpinto.online. All Rights Reserved.</p>
+      </footer>
+
     <script>
+          document.getElementById("year").textContent = new Date().getFullYear();
+
         function copyText() {
             const email = "martim.fpinto2735@gmail.com";
             navigator.clipboard.writeText(email)

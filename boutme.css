@@ -300,6 +300,20 @@ padding-bottom: 15px;
     transform: scale(1.1);
    border-radius: 4.4%;
 }
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #636363;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
 
 /* Contact Section */
 .contact-section {
