@@ -367,7 +367,6 @@ padding-bottom: 15px;
 
     .gallery-item{
         grid-template-columns: repeat(2, 1fr); 
-
     }
 
 
@@ -397,6 +396,10 @@ padding-bottom: 15px;
 
     .skills-grid {
         grid-template-columns: 1fr; /* One item per row */
+    }
+
+    .gallery-item{
+        grid-template-columns: repeat(2, 1fr); 
     }
 
     .skill-item {
