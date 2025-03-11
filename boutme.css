@@ -67,7 +67,7 @@ body {
  
     margin-top: 30vh;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Two columns side by side */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 3vh;
 }
 
@@ -364,6 +364,12 @@ padding-bottom: 15px;
     .profile-section h1 {
         font-size: 2rem;
     }
+
+    .gallery-item{
+        grid-template-columns: repeat(2, 1fr); 
+
+    }
+
 
     .about-content h2 {
         font-size: 1.8rem;
