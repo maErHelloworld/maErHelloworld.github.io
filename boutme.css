@@ -258,7 +258,7 @@ transform: scale(1.1); /* Enlarge image when hovering over the link */
     margin-top: 30vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns side by side */
-    gap: 3vh;
+    gap: 1vh;
     border-bottom: 3px solid rgba(255, 255, 255);
 border-bottom-left-radius: 3px;
 border-bottom-right-radius: 3px;
@@ -365,7 +365,7 @@ padding-bottom: 15px;
         font-size: 2rem;
     }
 
-    .gallery-item{
+    .gallery{
         grid-template-columns: repeat(2, 1fr); 
     }
 
@@ -398,7 +398,7 @@ padding-bottom: 15px;
         grid-template-columns: 1fr; /* One item per row */
     }
 
-    .gallery-item{
+    .gallery{
         grid-template-columns: repeat(2, 1fr); 
     }
 
