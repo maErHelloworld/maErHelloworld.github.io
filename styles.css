@@ -455,3 +455,99 @@ margin: 0 auto;
         box-shadow: 0 0 130px rgba(255, 255, 255, 0.5);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.photoshoot-booking {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+    color: #fff;
+    padding: 6rem;
+    border-radius: 12px;
+    box-shadow: 30px 40px 70px rgba(255, 255, 255, 0.1);
+    max-width: 500px;
+    width: 90%;
+    position: absolute;
+gap: 3vh;
+}
+
+/* Text Styling */
+.photoshoot-booking h2 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    opacity: 1;
+}
+
+.photoshoot-booking p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    opacity: 1;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #007bff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.lang-toggle {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    background: #333;
+    color: #fff;
+    opacity: 0.7;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.lang-toggle:hover {
+    background: #555;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .background-container {
+        min-height: 300px;
+        padding: 1.5rem;
+    }
+
+    .photoshoot-booking {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .btn, .lang-toggle {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
