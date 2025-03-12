@@ -370,7 +370,7 @@ margin: 0 auto;
             max-height: 6vh;
             background-color: #000000;
             color: #fff;
-            position: fixed;
+            position: absolute;
             width: 100%;
             left: 0;
 margin-bottom: auto;
