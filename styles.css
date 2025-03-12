@@ -477,7 +477,7 @@ margin: 0 auto;
 
 .photoshoot-booking {
     text-align: center;
-    background: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
     color: #fff;
     padding: 6rem;
     border-radius: 12px;
