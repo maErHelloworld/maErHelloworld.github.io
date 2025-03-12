@@ -539,6 +539,8 @@ gap: 3vh;
     .background-container {
         min-height: 300px;
         padding: 1.5rem;
+        margin-left: 1vw;
+        margin-right: 1vw;
     }
 
     .photoshoot-booking {

@@ -164,18 +164,15 @@ function toggleLanguage() {
     let title = document.getElementById("title");
     let description = document.getElementById("description");
     let bookNow = document.getElementById("book-now");
-    let title1 = document.getElementById("title1");
 
     if (title.innerText === "Agende uma Sessão Fotográfica") {
         // Switch to English
         title.innerText = "Book a Photoshoot";
-        title1.innerText = "Contact me via Instagram, e-mail or Whatssapp!";
         description.innerText = "Looking for a Photographer? i might be of help, i do cosplay photoshoots, (Solo and duo only) Street photography, street portraits... Contact me to find out, lets chat!";
         bookNow.innerText = "Book Now";
     } else {
         // Switch back to Portuguese
         title.innerText = "Agende uma Sessão Fotográfica";
-        title1.innerText ="Contacta me pelo Instagram, e-mail ou Whatsapp!";
         description.innerText = "Estás à procura de um Fotógrafo? Achas que o meu estilo de fotografia enquadra-se ás  tuas necessidades? Faço photoshoots de Cosplay, Fotografias de retrato na rua e mais... Contacta me através da página em baixo para falar comigo.";
         bookNow.innerText = "Contactos";
     }
