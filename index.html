@@ -86,9 +86,14 @@
   <img src="background.jpg" alt="Imagem abaixo do vídeo">
   <div class="photoshoot-booking">
     <h2 id="title">Agende uma Sessão Fotográfica</h2>
-    <h3 id="title1">Contacta-me pelo instagram, e-mail ou Whatssapp!</h3>
     <p id="description">Estás à procura de um Fotógrafo? Achas que o meu estilo de fotografia enquadra-se ás  tuas necessidades? Faço photoshoots de Cosplay, Fotografias de retrato na rua e mais... Contacta me através dos links que estão no topo da página falar comigo.</p>
-    <button class="lang-toggle" onclick="toggleLanguage()">🇵🇹 / 🇬🇧</button>
+    <div class="links-container">
+      <button class="lang-toggle" onclick="toggleLanguage()">🇵🇹 / 🇬🇧</button>
+
+      <a href="https://www.instagram.com/martimfpinto" class="link-item" target="_blank">
+        <i class="fab fa-instagram"></i>
+    </a>
+    </div>
 </div>
 </div>
 <!--
@@ -110,6 +115,22 @@
     
     
     <script>
+           function copyText() {
+            const email = "martim.fpinto2735@gmail.com";
+            navigator.clipboard.writeText(email)
+                .then(() => {
+                    document.getElementById("status").innerText = "Email copiado!";
+                })
+                .catch(err => {
+                    console.error("Erro ao copiar: ", err);
+                });
+        }
+
+
+        function copyWPP(){
+const wpp = "+351912651710"
+navigator.clipboard.writeText(wpp);
+        }
  /*  window.addEventListener("scroll", function () {
     const image = document.querySelector(".separator");
     const scrollPosition = window.scrollY;

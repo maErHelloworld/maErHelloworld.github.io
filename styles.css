@@ -514,9 +514,9 @@ gap: 3vh;
 
 
 .lang-toggle {
-    margin-top: 1rem;
     padding: 0.3rem 0.8rem;
     font-size: 0.9rem;
+    max-height: 2.7rem;
     background: #333;
     color: #fff;
     opacity: 0.7;
