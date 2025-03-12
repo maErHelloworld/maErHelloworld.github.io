@@ -367,14 +367,15 @@ margin: 0 auto;
         .footer {
             text-align: center;
             padding: 10px;
+            max-height: 6vh;
             background-color: #000000;
             color: #fff;
-            position: relative;
+            position: fixed;
             width: 100%;
             left: 0;
-            margin-top: auto;
-            bottom: 0;
-          }
+margin-bottom: auto;
+top: 0;
+        }
           
           .footer p {
             margin: 0;
@@ -476,7 +477,7 @@ margin: 0 auto;
 
 
 .photoshoot-booking {
-    margin-top: 10vh;
+    margin-top: 15vh;
     text-align: center;
     background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
     color: #fff;
@@ -487,6 +488,7 @@ margin: 0 auto;
     max-height: 90vh;
     width: 90%;
     position: absolute;
+    margin-bottom: 10vh;
 gap: 3vh;
 }
 
