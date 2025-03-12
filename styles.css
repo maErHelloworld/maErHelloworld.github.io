@@ -541,7 +541,9 @@ gap: 3vh;
         padding: 1.5rem;
         margin-left: 1vw;
         margin-right: 1vw;
+        width: 80%;
     }
+
 
     .photoshoot-booking {
         padding: 1.5rem;
