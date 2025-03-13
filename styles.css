@@ -555,3 +555,146 @@ gap: 3vh;
         font-size: 0.9rem;
     }
 }
+
+
+
+
+.image-container2 {
+    margin-top: 170px;
+    position: fixed;
+    top: auto;
+    left: 0;
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3%;
+    transition: transform 0.5s ease-out;
+}
+
+
+
+
+
+.pricing-section h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.promo {
+    background: #ff4d4d;
+    color: white;
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    align-items: center;
+    width: 50%;
+}
+
+.pricing-section {
+    margin-top: 5vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap; /* Permite que os elementos fiquem lado a lado sem sair do retângulo */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: space-around; /* Distribui espaço entre os elementos */
+    gap: 15px; /* Cria espaçamento entre os elementos */
+    z-index: 35;
+}
+
+.price-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    width: 45%; /* Garante que dois cabem lado a lado */
+    text-align: center;
+    box-sizing: border-box; /* Garante que padding não altera a largura */
+}
+
+.pricing-section h5{
+    font-size: 0.4rem;
+}
+
+.price-card h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.price-card p {
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+
+
+@media (max-width: 768px) {
+    .image-container2 {
+        margin-top: 100px; /* Reduz a margem para melhor adaptação */
+        position: relative; /* Evita problemas de posição fixa */
+        width: 100%;
+        height: auto;
+    }
+
+    .pricing-section {
+        position: relative; /* Remove absolute para melhor adaptação */
+        top: auto;
+        left: auto;
+        transform: none; /* Remove translate */
+        width: 90%; /* Usa uma largura mais flexível */
+        padding: 15px;
+        flex-direction: column; /* Muda para uma disposição vertical */
+        text-align: center;
+    }
+
+    .price-card {
+        width: 100%; /* Ocupa toda a largura disponível */
+        padding: 10px;
+    }
+
+    .pricing-section h1 {
+        font-size: 1.5em; /* Reduz ligeiramente o tamanho do título */
+    }
+
+    .price-card h2 {
+        font-size: 1.2em;
+    }
+
+    .price-card p {
+        font-size: 1em;
+    }
+}
+
+/* 📱 Para ecrãs muito pequenos (até 480px, telemóveis pequenos) */
+@media (max-width: 480px) {
+    .pricing-section {
+        width: 95%; /* Ajusta a largura para quase ocupar o ecrã */
+        padding: 10px;
+    }
+
+    .pricing-section h1 {
+        font-size: 1.3em;
+    }
+
+    .price-card {
+        padding: 8px;
+        width: 100%;
+    }
+
+    .price-card h2 {
+        font-size: 1em;
+    }
+
+    .price-card p {
+        font-size: 0.9em;
+    }
+}
