@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>Código Secreto</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7641379779082163"
+    crossorigin="anonymous"></script>
+    <style>
+        /* Estilização do corpo e fundo da página */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url("_MG_4414.JPG");
+            font-family: 'Dangrek', sans-serif;
+        }
+
+        /* Caixa centralizada */
+        .promo-box {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Código de desconto */
+        .discount-code {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: #ff4d4d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* Pequeno ajuste para ecrãs pequenos */
+        @media (max-width: 600px) {
+            .promo-box {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="promo-box">
+        <h2>🎉 Parabéns! 🎉</h2>
+        <p>Se descobriste esta página, ganhaste um **desconto extra de 10%**!</p>
+        <p>Para utilizá-lo, tira um print desta página e envia-me no Instagram.</p>
+        <p>O teu código único:</p>
+        <div class="discount-code" id="discountCode">Gerando...</div>
+    </div>
+
+    <script>
+        // Função para gerar código aleatório
+        function generateDiscountCode() {
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            let code = '';
+            for (let i = 0; i < 8; i++) {
+                code += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            return code;
+        }
+
+        // Insere o código na página
+        document.getElementById('discountCode').textContent = generateDiscountCode();
+    </script>
+</body>
+</html>
