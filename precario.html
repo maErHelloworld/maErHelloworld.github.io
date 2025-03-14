@@ -96,6 +96,24 @@ margin-bottom: 3vh;
     color: inherit;      /* Garante que a cor do texto seja a mesma do conteúdo */
 }
 
+.backPNG{
+    width: 5vh; /* Set image width */
+    height: auto; /* Keep the aspect ratio */
+    margin-left: 5vh;
+    border-radius: 10px; /* Round corners of the image */
+    transition: transform 0.3s ease; /* Add smooth transition on hover */
+    cursor: pointer;
+  max-width: 10vh;
+}
+
+a:hover .backPNG {
+    transform: scale(1.1); /* Enlarge image when hovering over the link */
+}
+
+.backPNG:hover{ 
+transform: scale(1.1); /* Enlarge image when hovering over the link */
+}
+
 
     </style>
 </head>
@@ -108,8 +126,12 @@ margin-bottom: 3vh;
   gtag('config', 'G-BX0N46QJBN');
 </script>
 <body>
-   
+ 
     <div class="pricing-section">
+        <a href="index.html">
+            <img src="back.png" alt="Return" class="backPNG">
+          </a>
+    
         <h1>Preçário - Sessões Fotográficas</h1>
         <div class="promo">
             <a href="segredo.html">
