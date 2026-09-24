@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- ScrollReveal JS para animações -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Não Encontrada (404) | Martim F. Pinto</title>
+  
+  <meta name="description" content="Página não encontrada no portfólio de Martim F. Pinto.">
+
+  <!-- Favicon & Ícone para Mobile -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .error-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .error-card {
+      background: rgba(22, 28, 45, 0.85);
+      border: 1px solid rgba(212, 163, 115, 0.25);
+      border-radius: 20px;
+      padding: 48px 32px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #d4a373, #e6ccb2);
+    }
+
+    .error-code {
+      font-size: 6rem;
+      font-weight: 800;
+      color: #d4a373;
+      line-height: 1;
+      margin-bottom: 16px;
+      letter-spacing: -2px;
+      text-shadow: 0 0 20px rgba(212, 163, 115, 0.2);
+    }
+
+    .error-card h1 {
+      font-size: 1.8rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .error-card p {
+      color: #9ca3af;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Martim F. <span>Pinto</span></a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link" data-pt="Início" data-en="Home">Início</a>
+        <a href="projetos.html" class="nav-link" data-pt="Projetos" data-en="Projects">Projetos</a>
+        <a href="fotografia.html" class="nav-link" data-pt="Fotografia" data-en="Photography">Fotografia</a>
+        <a href="contacto.html" class="nav-link btn-cta" data-pt="Contacto" data-en="Contact">Contacto</a>
+        
+        <!-- BOTÃO DE IDIOMA -->
+        <button id="lang-toggle" class="lang-btn" type="button" aria-label="Mudar Idioma">
+          <span id="lang-label">EN</span>
+        </button>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu de Navegação">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Error 404 Section -->
+  <main class="error-section">
+    <div class="container">
+      <div class="error-card">
+        <div class="error-code">404</div>
+        <h1 data-pt="Página Não Encontrada" data-en="Page Not Found">Página Não Encontrada</h1>
+        <p data-pt="O endereço que tentaste aceder não existe ou foi movido. Utiliza os botões abaixo para regressar em segurança ao site." data-en="The page you are looking for doesn't exist or has been moved. Use the buttons below to safely navigate back.">
+          O endereço que tentaste aceder não existe ou foi movido. Utiliza os botões abaixo para regressar em segurança ao site.
+        </p>
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-primary">
+            <i class="fa-solid fa-house"></i> <span data-pt="Voltar ao Início" data-en="Back to Home">Voltar ao Início</span>
+          </a>
+          <a href="contacto.html" class="btn btn-secondary">
+            <i class="fa-solid fa-envelope"></i> <span data-pt="Contacto" data-en="Contact">Contacto</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <p data-pt="&copy; 2026 Martim F. Pinto. Todos os direitos reservados." data-en="&copy; 2026 Martim F. Pinto. All rights reserved.">&copy; 2026 Martim F. Pinto. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
