@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- ScrollReveal JS para animações de Scroll -->
+<script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Martim Pinto</title>
+  <meta name="description" content="Entre em contacto com Martim Pinto para projetos de software ou fotografia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Martim F. <span>Pinto</span></a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="projetos.html" class="nav-link">Projetos</a>
+        <a href="fotografia.html" class="nav-link">Fotografia</a>
+        <a href="contacto.html" class="nav-link active btn-cta">Contacto</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <section class="section hero">
+    <div class="container">
+      <h2 class="section-title">Vamos Falar?</h2>
+      <div class="contact-grid">
+        
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <h3>Email Profissional</h3>
+              <p>Disponível mediante formulário</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <h3>Localização</h3>
+              <p>Lisboa, Portugal</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" action="https://formspree.io/f/xnpnvrne" method="POST">
+          <div class="form-group">
+            <label for="name">Nome / Empresa</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="O seu nome" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Endereço de Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="seuemail@dominio.com" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Mensagem</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Como posso ajudar no seu projeto?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-accent"><i class="fa-solid fa-paper-plane"></i> Enviar Mensagem</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <p>&copy; 2026 Martim Pinto. Todos os direitos reservados.</p>
+      </div>
+      <a href="#" class="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

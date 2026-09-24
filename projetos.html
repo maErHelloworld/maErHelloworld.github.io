@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <!-- ScrollReveal JS para animações de Scroll -->
+<script src="https://unpkg.com/scrollreveal"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos & Product Management | Martim F. Pinto</title>
+  <meta name="description" content="Percurso em Product Management, Sapius, Desenvolvimento Web/Mobile e Paixão por Fotografia por Martim F. Pinto.">
+  
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .project-section-title {
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 12px;
+    }
+    .project-section-title i {
+      color: #d4a373;
+    }
+
+    /* Hero Feature Card para Product Management */
+    .pm-feature-card {
+      background: linear-gradient(135deg, rgba(212, 163, 115, 0.12), rgba(22, 28, 45, 0.95));
+      border: 1px solid rgba(212, 163, 115, 0.35);
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+    .pm-feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #d4a373, #e6ccb2);
+    }
+
+    /* Feature Card para Fotografia */
+    .photo-feature-card {
+      background: linear-gradient(135deg, rgba(22, 28, 45, 0.95), rgba(212, 163, 115, 0.1));
+      border: 1px solid rgba(212, 163, 115, 0.35);
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin-top: 36px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+    .photo-feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #e6ccb2, #d4a373);
+    }
+
+    .pm-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .pm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(212, 163, 115, 0.2);
+      color: #d4a373;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid rgba(212, 163, 115, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pm-feature-card h3, .photo-feature-card h3 {
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-top: 8px;
+    }
+    .pm-body p, .photo-body p {
+      color: #9ca3af;
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .pm-highlights-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .pm-highlight-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 14px 18px;
+      border-radius: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .pm-highlight-item i {
+      color: #d4a373;
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+    .pm-highlight-item strong {
+      display: block;
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+    .pm-highlight-item span {
+      color: #9ca3af;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Martim F. <span>Pinto</span></a>
+      <nav class="nav-menu" id="nav-menu">
+        <a href="index.html" class="nav-link">Início</a>
+        <a href="projetos.html" class="nav-link active">Projetos</a>
+        <a href="fotografia.html" class="nav-link">Fotografia</a>
+        <a href="contacto.html" class="nav-link btn-cta">Contacto</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="section hero" style="padding-bottom: 32px;">
+    <div class="container">
+      <span class="badge">Especialização & Projetos</span>
+      <h1>Product Management & Projetos</h1>
+      <p class="hero-description">
+        O meu percurso focado na gestão de produto digital, liderança estratégica de requisitos, desenvolvimento de software e portfólio visual.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECÇÃO DESTAQUE 1: PRODUCT MANAGEMENT EXPERIENCE -->
+  <section class="section" style="padding-top: 0; padding-bottom: 32px;">
+    <div class="container">
+      
+      <div class="pm-feature-card">
+        <div class="pm-header">
+          <div>
+            <h3>Percurso em Product Management & Product Ownership</h3>
+          </div>
+        </div>
+
+        <div class="pm-body">
+          <p>
+            A experiência em Product Management é um dos pilares centrais do meu perfil profissional. Apaixonado por transformar necessidades complexas de negócio em soluções digitais viáveis, atuei na definição de visão de produto, análise de viabilidade técnica/financeira e especificação de requisitos funcionais.
+          </p>
+          <p>
+            No projeto <strong>Stamps QR / Privilégios ECI (El Corte Inglés)</strong>, assumi a liderança como Product Owner e Product Designer, orquestrando todo o ciclo do produto desde a concetualização até à preparação do piloto operacional:
+          </p>
+
+          <div class="pm-highlights-list">
+            <div class="pm-highlight-item">
+              <i class="fa-solid fa-chart-line"></i>
+              <div>
+                <strong>Benchmarking de Fornecedores SaaS</strong>
+                <span>Análise comparativa de plataformas enterprise (Passtastic vs. PassKit vs. Oappso) ponderando custo, escalabilidade e prevenção de fraude.</span>
+              </div>
+            </div>
+
+            <div class="pm-highlight-item">
+              <i class="fa-solid fa-users-gear"></i>
+              <div>
+                <strong>Definição do Onboarding & UX</strong>
+                <span>Mapeamento da jornada do cliente e do operador, integrando cartões nativos Apple Wallet & Google Wallet sem exigir investimento em infraestrutura de TI.</span>
+              </div>
+            </div>
+            <div class="pm-highlight-item">
+              <i class="fa-solid fa-handshake"></i>
+              <div>
+                <strong>Gestão de Stakeholders</strong>
+                <span>Apresentação e defesa de propostas de valor perante direções de transformação digital e equipas operacionais.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-tags" style="margin-top: 16px;">
+          <span>Product Lifecycle</span>
+          <span>SaaS Benchmarking</span>
+          <span>Apple/Google Wallet Integration</span>
+          <span>Agile / Jira</span>
+          <span>User Journey Mapping</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECÇÃO 1: OUTROS PROJETOS DE DESENVOLVIMENTO -->
+  <section class="section" style="padding-top: 0; padding-bottom: 48px;">
+    <div class="container">
+      <h2 class="project-section-title"><i class="fa-solid fa-laptop-code"></i> Desenvolvimento de Software & Plataformas</h2>
+      
+      <div class="portfolio-grid">
+        
+        <!-- Project 1: Sapius -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-rocket"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Founder & Lead Developer</span>
+            <h3>Sapius</h3>
+            <p>Projeto de autor focado no desenvolvimento de uma plataforma inteligente, combinando engenharia de software, arquitetura de dados e visão de produto para resolver necessidades reais no ecossistema digital.</p>
+            <div class="card-tags">
+              <span>Sapius</span>
+              <span>Founder</span>
+              <span>Product Architecture</span>
+              <span>Full-Stack</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Websites CTeSP -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-globe"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Desenvolvimento Web (CTeSP)</span>
+            <h3>Websites & Plataformas Web</h3>
+            <p>Desenvolvimento de diversos websites e aplicações web responsivas criados no âmbito de trabalhos académicos no CTeSP, utilizando HTML5, CSS3, JavaScript e integração com APIs.</p>
+            <div class="card-tags">
+              <span>HTML5 / CSS3</span>
+              <span>JavaScript</span>
+              <span>CTeSP</span>
+              <span>Web Development</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: iTasks -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-list-check"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Mobile Application</span>
+            <h3>iTasks — Gestor de Tarefas</h3>
+            <p>Aplicação móvel para organização e gestão de tarefas em formato Kanban, com definição de prioridades e lógica de notificações para acompanhamento do progresso.</p>
+            <div class="card-tags">
+              <span>Mobile App</span>
+              <span>Kanban</span>
+              <span>Task Management</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: BibliotecaAcademicaV2 -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-database"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Base de Dados Relacional</span>
+            <h3>BibliotecaAcademicaV2</h3>
+            <p>Desenvolvimento de base de dados relacional em SQL Server concebida para a gestão de recursos académicos. Inclui scripts com Triggers automáticos e Stored Procedures.</p>
+            <div class="card-tags">
+              <span>SQL Server</span>
+              <span>T-SQL</span>
+              <span>Triggers</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: Jogo 2D Unity -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-gamepad"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Unity / C#</span>
+            <h3>Jogo 2D Action Mobile</h3>
+            <p>Jogo mobile desenvolvido em Unity com programação em C#, controlo de colisões, sistema de contagem de tempo/pontuação e exportação para APK Android.</p>
+            <div class="card-tags">
+              <span>Unity 2D</span>
+              <span>C#</span>
+              <span>Android APK</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECÇÃO 2: SERVIÇOS & PROJETOS DE FOTOGRAFIA -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <h2 class="project-section-title"><i class="fa-solid fa-camera"></i> Projetos & Serviços de Fotografia</h2>
+      
+      <div class="portfolio-grid">
+
+        <!-- Foto 1: Eventos & Palco -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-headset"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Cobertura de Eventos</span>
+            <h3>Convenções, Gaming & Palco (LGW)</h3>
+            <p>Cobertura fotográfica completa de grande escala em eventos de gaming e cultura pop como o Lisboa Games Week (LGW), espetáculos, concertos e dinâmica de palco.</p>
+            <div class="card-tags">
+              <span>LGW</span>
+              <span>Gaming & Pop Culture</span>
+              <span>Fotografia de Palco</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Foto 2: Fotografia Social -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-cake-candles"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Fotografia Social & Eventos Familiares</span>
+            <h3>Batizados & Baby Showers</h3>
+            <p>Registo fotográfico de momentos especiais em celebrações de batizados, baby showers e convívios familiares com foco em capturas espontâneas e retratos.</p>
+            <div class="card-tags">
+              <span>Batizados</span>
+              <span>Baby Shower</span>
+              <span>Fotografia Social</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Foto 3: Despedidas de Solteira & Sessões -->
+        <article class="portfolio-card">
+          <div class="card-image">
+            <div class="img-placeholder"><i class="fa-solid fa-champagne-glasses"></i></div>
+          </div>
+          <div class="card-content">
+            <span class="card-badge">Sessões Privadas</span>
+            <h3>Despedidas de Solteira & Sessões Privadas</h3>
+            <p>Cobertura fotográfica em ambiente descontraído para despedidas de solteira, festas de grupo e sessões fotográficas personalizadas ao ar livre ou em estúdio.</p>
+            <div class="card-tags">
+              <span>Despedida de Solteira</span>
+              <span>Sessões de Grupo</span>
+              <span>Edição Digital</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- SECÇÃO DESTAQUE 2: PAIXÃO PELA FOTOGRAFIA -->
+      <div class="photo-feature-card">
+        <div class="pm-header">
+          <div>
+            <h3>A Arte Visual & Paixão pela Fotografia</h3>
+          </div>
+        </div>
+
+        <div class="photo-body">
+          <p>
+            A fotografia é para mim mais do que um passatempo profissional: é uma forma de capturar momentos dinâmicos, emoções genuínas e a energia irrepetível do movimento.
+          </p>
+          <p>
+            Seja na intensidade do palco e de grandes convenções de cultura pop (como o Lisboa Games Week), na espontaneidade de eventos sociais (batizados, baby showers e celebrações de grupo) ou na precisão de sessões privadas, coloco o meu foco em cada detalhe.
+          </p>
+
+        <div style="text-align: right; margin-top: 16px;">
+          <a href="fotografia.html" class="btn btn-accent"><i class="fa-solid fa-camera"></i> Explorar Galeria Completa</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <p>&copy; 2026 Martim F. Pinto. Todos os direitos reservados.</p>
+      </div>
+      <a href="#" class="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
