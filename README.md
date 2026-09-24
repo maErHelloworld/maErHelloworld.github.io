@@ -7,7 +7,6 @@ Bem-vindo ao repositório do meu site/portfólio pessoal ([martimfpinto.pt](http
 ## Destaques do Projeto
 
 - **Design Dark & Beige:** Estética moderna, limpa e executiva com tema escuro e apontamentos em tom bege/dourado.
-- **Sistema Bilingue (PT / EN):** Alternância dinâmica de idioma sem recarregamento de página via atributos `data-pt` e `data-en`.
 - **Animações & Micro-Interações:** Animações de scroll integradas com `ScrollReveal.js`.
 - **Feed do Instagram Vivo:** Integração dinâmica através do widget `Behold.so`.
 - **Galeria de Fotografia:** Exibição responsiva de trabalhos visuais com embed do `Juicer.io`.
