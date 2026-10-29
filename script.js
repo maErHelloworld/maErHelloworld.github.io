@@ -73,6 +73,7 @@ async function loadImagesByPrefix(prefix, maxCheck) {
   });
 }
 
+// Abrir Modal do Evento e criar as fotos com clique de ampliação
 async function openEventGallery(eventId) {
   var data = eventsInfo[eventId];
   if (!data) return;
@@ -106,41 +107,36 @@ async function openEventGallery(eventId) {
       img.src = imgUrl;
       img.alt = data.title;
       img.loading = "lazy";
+      // Clique para ampliar foto
+      img.onclick = function() { openLightbox(imgUrl); };
       gridEl.appendChild(img);
     });
   }
 }
 
-function closeGalleryModal() {
-  var modalEl = document.getElementById("gallery-modal");
-  if (modalEl) {
-    modalEl.classList.remove("active");
+// Funções para a Lightbox / Ampliação
+function openLightbox(imgSrc) {
+  var lightbox = document.getElementById("lightbox-modal");
+  var lightboxImg = document.getElementById("lightbox-img");
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add("active");
   }
-  document.body.style.overflow = "auto";
 }
 
-function filterEvents(category, btnElement) {
-  var buttons = document.querySelectorAll(".filter-btn");
-  buttons.forEach(function(btn) { btn.classList.remove("active"); });
-  
-  if (btnElement) {
-    btnElement.classList.add("active");
+function closeLightbox() {
+  var lightbox = document.getElementById("lightbox-modal");
+  if (lightbox) {
+    lightbox.classList.remove("active");
   }
-
-  var cards = document.querySelectorAll(".event-card");
-  cards.forEach(function(card) {
-    var cardCategory = card.getAttribute("data-category");
-    if (category === "all" || cardCategory === category) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
 }
 
+// Exportar para o escopo do browser
 window.openEventGallery = openEventGallery;
 window.closeGalleryModal = closeGalleryModal;
 window.filterEvents = filterEvents;
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
 
 document.addEventListener('DOMContentLoaded', function() {
   var navToggle = document.getElementById('nav-toggle');
