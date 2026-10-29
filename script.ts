@@ -81,5 +81,109 @@ document.addEventListener('DOMContentLoaded', () => {
       applyLanguage(currentLang);
     });
   }
+  // Interface para definir a estrutura dos dados de cada evento
+interface EventData {
+  title: string;
+  description: string;
+  images: string[];
+}
+
+// Mapeamento de eventos
+const eventsData: Record<string, EventData> = {
+  gicof: {
+    title: "GICOF 2026",
+    description: "Cobertura fotográfica oficial e destaques do festival.",
+    images: [
+      "assets/eventos/gicof-1.jpg",
+      "assets/eventos/gicof-2.jpg"
+    ]
+  },
+  festadojapao: {
+    title: "Festa do Japão 2025",
+    description: "Registo da cultura japonesa, atuações em palco e cosplayers.",
+    images: [
+      "assets/eventos/japao-1.jpg",
+      "assets/eventos/japao-2.jpg"
+    ]
+  },
+  batizados: {
+    title: "Batizados",
+    description: "Fotografia documental da cerimónia e momentos de convívio.",
+    images: [
+      "assets/eventos/batizado-1.jpg"
+    ]
+  },
+  despedida: {
+    title: "Despedida de Solteiro",
+    description: "Cobertura de celebrações privadas, momentos espontâneos e convívio.",
+    images: [
+      "assets/eventos/despedida-1.jpg"
+    ]
+  }
+};
+
+// Abrir Modal
+function openEventGallery(eventId: string): void {
+  const data = eventsData[eventId];
+  if (!data) return;
+
+  const titleEl = document.getElementById("modal-title");
+  const descEl = document.getElementById("modal-desc");
+  const gridEl = document.getElementById("modal-images-grid");
+  const modalEl = document.getElementById("gallery-modal");
+
+  if (titleEl) titleEl.innerText = data.title;
+  if (descEl) descEl.innerText = data.description;
+
+  if (gridEl) {
+    gridEl.innerHTML = "";
+    data.images.forEach((imgUrl: string) => {
+      const img = document.createElement("img");
+      img.src = imgUrl;
+      img.alt = data.title;
+      img.loading = "lazy";
+      gridEl.appendChild(img);
+    });
+  }
+
+  if (modalEl) {
+    modalEl.classList.add("active");
+  }
+  document.body.style.overflow = "hidden";
+}
+
+// Fechar Modal
+function closeGalleryModal(): void {
+  const modalEl = document.getElementById("gallery-modal");
+  if (modalEl) {
+    modalEl.classList.remove("active");
+  }
+  document.body.style.overflow = "auto";
+}
+
+// Filtrar Categorias
+function filterEvents(category: string, btnElement?: HTMLElement): void {
+  const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
+  buttons.forEach(btn => btn.classList.remove("active"));
+  
+  if (btnElement) {
+    btnElement.classList.add("active");
+  }
+
+  const cards = document.querySelectorAll<HTMLElement>(".event-card");
+  cards.forEach(card => {
+    const cardCategory = card.getAttribute("data-category");
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// Garantir que as funções ficam acessíveis no escopo global (window) se compilares como módulo
+(window as any).openEventGallery = openEventGallery;
+(window as any).closeGalleryModal = closeGalleryModal;
+(window as any).filterEvents = filterEvents;
 
 });
