@@ -1003,17 +1003,26 @@ textarea.form-control {
 }
 
 .modal-close {
-  background: #1e293b;
-  border: 1px solid #334155;
-  color: #fff;
-  width: 40px;
-  height: 40px;
+  position: relative;
+  z-index: 10005 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer !important;
+  touch-action: manipulation;
+  -webk
+.modal-close i {
+  font-size: 1.4rem;
+  pointer-events: none !important;
 }
-
+  
 .modal-close:hover {
   background: #ef4444;
 }
