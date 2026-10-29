@@ -1,7 +1,6 @@
 var eventsInfo = {
   gicof: {
     title: "GICOF 2026",
-    description: "Cobertura fotográfica oficial e destaques do festival.",
     description: "Cobertura fotográfica oficial e destaques da Final.",
     prefix: "gicof",
     maxPhotos: 20
@@ -141,30 +140,20 @@ function closeLightbox() {
   }
 }
 
-// Exportar para o escopo do browser
-function filterEvents(category, btnElement) {
-  var buttons = document.querySelectorAll(".filter-btn");
-  buttons.forEach(function(btn) { btn.classList.remove("active"); });
-  
-  if (btnElement) {
-    btnElement.classList.add("active");
+// Garantir associação de eventos ao carregar o DOM
+document.addEventListener('DOMContentLoaded', function() {
+  var closeBtn = document.getElementById('btn-close-gallery-modal');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeGalleryModal();
+    });
   }
+});
 
-  var cards = document.querySelectorAll(".event-card");
-  cards.forEach(function(card) {
-    var cardCategory = card.getAttribute("data-category");
-    if (category === "all" || cardCategory === category) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-
-// EXPOSIÇÃO GLOBAL DE FUNÇÕES (ESSENCIAL PARA O ONCLICK FUNCIONAR)
-window.openEventGallery = openEventGallery;
+// Exposição global de segurança
 window.closeGalleryModal = closeGalleryModal;
-window.filterEvents = filterEvents;
 window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
 
