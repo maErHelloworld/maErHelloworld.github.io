@@ -163,6 +163,21 @@ window.openLightbox = openLightbox;
 window.closeLightbox = closeLightbox;
 
 document.addEventListener('DOMContentLoaded', function() {
+  // Configuração do botão de fechar o modal (Otimizado para Desktop e Mobile)
+  var closeBtn = document.getElementById('btn-close-gallery-modal');
+  if (closeBtn) {
+    function handleClose(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeGalleryModal();
+    }
+
+    // Evento de clique para desktop e toque tático para mobile
+    closeBtn.addEventListener('click', handleClose);
+    closeBtn.addEventListener('touchstart', handleClose, { passive: false });
+  }
+
+  // Menu Mobile
   var navToggle = document.getElementById('nav-toggle');
   var navMenu = document.getElementById('nav-menu');
 
@@ -172,6 +187,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Carrossel de Competências
   var track = document.getElementById('skills-track');
   var prevBtn = document.getElementById('skills-prev');
   var nextBtn = document.getElementById('skills-next');
@@ -186,6 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ScrollReveal
   if (typeof ScrollReveal !== 'undefined') {
     var sr = ScrollReveal({
       origin: 'bottom',
@@ -203,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
     sr.reveal('.cv-download-card', { origin: 'right' });
   }
 
+  // Modo Bilingue
   var langToggleBtn = document.getElementById('lang-toggle');
   var langLabel = document.getElementById('lang-label');
   var currentLang = localStorage.getItem('site_lang') || 'pt';
