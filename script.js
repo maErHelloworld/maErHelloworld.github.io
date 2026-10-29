@@ -1,13 +1,13 @@
 var eventsInfo = {
   gicof: {
     title: "GICOF 2026",
-    description: "Cobertura fotográfica oficial e destaques do festival.",
+    description: "Cobertura fotográfica oficial e destaques da Final.",
     prefix: "gicof",
     maxPhotos: 20
   },
   festadojapao: {
     title: "Festa do Japão 2025",
-    description: "Registo da cultura japonesa, atuações em palco e cosplayers.",
+    description: "Registo de Palco",
     prefix: "festjp",
     maxPhotos: 20
   },
@@ -73,7 +73,6 @@ async function loadImagesByPrefix(prefix, maxCheck) {
   });
 }
 
-// Abrir Modal do Evento e criar as fotos com clique de ampliação
 async function openEventGallery(eventId) {
   var data = eventsInfo[eventId];
   if (!data) return;
@@ -107,14 +106,20 @@ async function openEventGallery(eventId) {
       img.src = imgUrl;
       img.alt = data.title;
       img.loading = "lazy";
-      // Clique para ampliar foto
       img.onclick = function() { openLightbox(imgUrl); };
       gridEl.appendChild(img);
     });
   }
 }
 
-// Funções para a Lightbox / Ampliação
+function closeGalleryModal() {
+  var modalEl = document.getElementById("gallery-modal");
+  if (modalEl) {
+    modalEl.classList.remove("active");
+  }
+  document.body.style.overflow = "auto";
+}
+
 function openLightbox(imgSrc) {
   var lightbox = document.getElementById("lightbox-modal");
   var lightboxImg = document.getElementById("lightbox-img");
@@ -131,7 +136,26 @@ function closeLightbox() {
   }
 }
 
-// Exportar para o escopo do browser
+function filterEvents(category, btnElement) {
+  var buttons = document.querySelectorAll(".filter-btn");
+  buttons.forEach(function(btn) { btn.classList.remove("active"); });
+  
+  if (btnElement) {
+    btnElement.classList.add("active");
+  }
+
+  var cards = document.querySelectorAll(".event-card");
+  cards.forEach(function(card) {
+    var cardCategory = card.getAttribute("data-category");
+    if (category === "all" || cardCategory === category) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+
+// EXPOSIÇÃO GLOBAL DE FUNÇÕES (ESSENCIAL PARA O ONCLICK FUNCIONAR)
 window.openEventGallery = openEventGallery;
 window.closeGalleryModal = closeGalleryModal;
 window.filterEvents = filterEvents;
