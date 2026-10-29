@@ -1,50 +1,91 @@
 // Declaração global para evitar avisos de TypeScript com o ScrollReveal
 declare const ScrollReveal: any;
 
-// Interface para definir a estrutura dos dados de cada evento
-interface EventData {
+interface EventInfo {
   title: string;
   description: string;
-  images: string[];
+  prefix: string;
+  maxPhotos: number;
 }
 
-// Mapeamento de eventos
-const eventsData: Record<string, EventData> = {
+const eventsInfo: Record<string, EventInfo> = {
   gicof: {
     title: "GICOF 2026",
     description: "Cobertura fotográfica oficial e destaques do festival.",
-    images: [
-      "assets/eventos/gicof-1.jpg",
-      "assets/eventos/gicof-2.jpg"
-    ]
+    prefix: "gicof",
+    maxPhotos: 20
   },
   festadojapao: {
     title: "Festa do Japão 2025",
     description: "Registo da cultura japonesa, atuações em palco e cosplayers.",
-    images: [
-      "assets/eventos/japao-1.jpg",
-      "assets/eventos/japao-2.jpg"
-    ]
+    prefix: "festjp",
+    maxPhotos: 20
   },
   batizados: {
     title: "Batizados",
     description: "Fotografia documental da cerimónia e momentos de convívio.",
-    images: [
-      "assets/eventos/batizado-1.jpg"
-    ]
+    prefix: "batizado",
+    maxPhotos: 20
   },
   despedida: {
     title: "Despedida de Solteiro",
-    description: "Cobertura de celebrações privadas, momentos espontâneos e convívio.",
-    images: [
-      "assets/eventos/despedida-1.jpg"
-    ]
+    description: "Cobertura de celebrações privadas e momentos espontâneos.",
+    prefix: "desp",
+    maxPhotos: 20
   }
 };
 
-// 1. Abrir Modal
-function openEventGallery(eventId: string): void {
-  const data = eventsData[eventId];
+// Tenta carregar a imagem em .jpg primeiro; se falhar, tenta em .png
+function checkImageExistence(srcWithoutExt: string): Promise<string | null> {
+  const extensions = ['.jpg', '.png', '.JPG', '.PNG'];
+
+  return new Promise((resolve) => {
+    let index = 0;
+
+    const tryNext = () => {
+      if (index >= extensions.length) {
+        resolve(null); // Não encontrou nenhuma versão válida
+        return;
+      }
+
+      const fullSrc = `${srcWithoutExt}${extensions[index]}`;
+      const img = new Image();
+
+      img.onload = () => resolve(fullSrc);
+      img.onerror = () => {
+        index++;
+        tryNext();
+      };
+      img.src = fullSrc;
+    };
+
+    tryNext();
+  });
+}
+
+// Procura as imagens dinamicamente suportando .jpg e .png
+async function loadImagesByPrefix(prefix: string, maxCheck: number = 20): Promise<string[]> {
+  const checks: Promise<string | null>[] = [];
+
+  for (let i = 1; i <= maxCheck; i++) {
+    const basePath = `assets/eventos/${prefix}${i}`;
+    checks.push(checkImageExistence(basePath));
+  }
+
+  const results = await Promise.all(checks);
+  const foundImages = results.filter((src): src is string => src !== null);
+
+  // Ordena a lista de fotos numericamente (1 a 20)
+  return foundImages.sort((a, b) => {
+    const numA = parseInt(a.match(/(\d+)\.(jpg|png)$/i)?.[1] || "0");
+    const numB = parseInt(b.match(/(\d+)\.(jpg|png)$/i)?.[1] || "0");
+    return numA - numB;
+  });
+}
+
+// Abrir Modal do Evento
+async function openEventGallery(eventId: string): Promise<void> {
+  const data = eventsInfo[eventId];
   if (!data) return;
 
   const titleEl = document.getElementById("modal-title");
@@ -56,8 +97,22 @@ function openEventGallery(eventId: string): void {
   if (descEl) descEl.innerText = data.description;
 
   if (gridEl) {
+    gridEl.innerHTML = "<p style='color: #94a3b8;'>A carregar fotografias...</p>";
+  }
+
+  if (modalEl) modalEl.classList.add("active");
+  document.body.style.overflow = "hidden";
+
+  const images = await loadImagesByPrefix(data.prefix, data.maxPhotos);
+
+  if (gridEl) {
     gridEl.innerHTML = "";
-    data.images.forEach((imgUrl: string) => {
+    if (images.length === 0) {
+      gridEl.innerHTML = "<p style='color: #94a3b8;'>Sem fotografias disponíveis de momento.</p>";
+      return;
+    }
+
+    images.forEach((imgUrl) => {
       const img = document.createElement("img");
       img.src = imgUrl;
       img.alt = data.title;
@@ -65,14 +120,9 @@ function openEventGallery(eventId: string): void {
       gridEl.appendChild(img);
     });
   }
-
-  if (modalEl) {
-    modalEl.classList.add("active");
-  }
-  document.body.style.overflow = "hidden";
 }
 
-// 2. Fechar Modal
+// Fechar Modal
 function closeGalleryModal(): void {
   const modalEl = document.getElementById("gallery-modal");
   if (modalEl) {
@@ -81,7 +131,7 @@ function closeGalleryModal(): void {
   document.body.style.overflow = "auto";
 }
 
-// 3. Filtrar Categorias
+// Filtrar Categorias
 function filterEvents(category: string, btnElement?: HTMLElement): void {
   const buttons = document.querySelectorAll<HTMLButtonElement>(".filter-btn");
   buttons.forEach(btn => btn.classList.remove("active"));
@@ -101,12 +151,12 @@ function filterEvents(category: string, btnElement?: HTMLElement): void {
   });
 }
 
-// Exportar explicitamente para o objeto window
+// Exportar para o escopo global do browser
 (window as any).openEventGallery = openEventGallery;
 (window as any).closeGalleryModal = closeGalleryModal;
 (window as any).filterEvents = filterEvents;
 
-// Inicializações DOM ao carregar a página
+// Inicializaciones da página
 document.addEventListener('DOMContentLoaded', () => {
 
   // Menu Mobile
