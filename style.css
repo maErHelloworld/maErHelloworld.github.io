@@ -866,7 +866,7 @@ textarea.form-control {
   .hero h1 {
     font-size: 2.5rem;
   }
-} /* <--- FECHO DA MEDIA QUERY (CORRIGIDO) */
+}
 
 @media (max-width: 640px) {
   .skills-card-item {
@@ -891,9 +891,9 @@ textarea.form-control {
 }
 
 .filter-btn:hover, .filter-btn.active {
-  background: var(--accent, #38bdf8);
-  color: #0f172a;
-  border-color: var(--accent, #38bdf8);
+  background: var(--accent, #d4a373);
+  color: #0b0f19;
+  border-color: var(--accent, #d4a373);
 }
 
 .events-grid {
@@ -913,7 +913,7 @@ textarea.form-control {
 
 .event-card:hover {
   transform: translateY(-5px);
-  border-color: var(--accent, #38bdf8);
+  border-color: var(--accent, #d4a373);
 }
 
 .event-thumb {
@@ -927,7 +927,7 @@ textarea.form-control {
 
 .event-thumb .img-placeholder {
   font-size: 2.5rem;
-  color: var(--accent, #38bdf8);
+  color: var(--accent, #d4a373);
 }
 
 .event-badge {
@@ -962,7 +962,7 @@ textarea.form-control {
 .event-action {
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--accent, #38bdf8);
+  color: var(--accent, #d4a373);
   display: inline-flex;
   align-items: center;
   gap: 6px;
