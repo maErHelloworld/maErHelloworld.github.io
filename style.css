@@ -1012,10 +1012,23 @@ textarea.form-control {
   font-size: 1.2rem;
   cursor: pointer;
   transition: var(--transition);
-  }
-  
+  position: relative;
+  z-index: 10005 !important;
+  pointer-events: auto !important;
+}
+
 .modal-close:hover {
   background: #ef4444;
+}
+
+.modal-close i {
+  pointer-events: none !important;
+}
+
+/* Evita que a lightbox invisível intercepte os cliques */
+.lightbox-modal:not(.active) {
+  display: none !important;
+  pointer-events: none !important;
 }
 
 /* Grelha de fotos do Modal e Animações */
