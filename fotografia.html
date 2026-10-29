@@ -151,6 +151,93 @@
     </div>
   </section>
 
+    <section class="section" style="padding-top: 0;" id="eventos">
+    <div class="container">
+      <h2 class="section-title">Cobertura de Eventos & Celebrções</h2>
+      <p style="color: #94a3b8; margin-bottom: 24px;">
+        Registos de festivais, convenções de cultura pop e eventos privados.
+      </p>
+
+      <!-- Filtros por Categoria -->
+      <div class="event-filters" style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
+        <button class="filter-btn active" onclick="filterEvents('all')">Todos</button>
+        <button class="filter-btn" onclick="filterEvents('cultural')">Cultura & Festivais</button>
+        <button class="filter-btn" onclick="filterEvents('social')">Sociais & Festas</button>
+      </div>
+
+      <!-- Grelha de Cartões de Eventos -->
+      <div class="events-grid">
+
+        <!-- Evento 1: GICOF 2026 -->
+        <div class="event-card" data-category="cultural" onclick="openEventGallery('gicof')">
+          <div class="event-thumb">
+            <div class="img-placeholder"><i class="fa-solid fa-camera-retro"></i></div>
+            <span class="event-badge">GICOF 2026</span>
+          </div>
+          <div class="event-info">
+            <h3>GICOF 2026</h3>
+            <p>Fotografia oficial e momentos do festival.</p>
+            <span class="event-action">Ver Fotos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Evento 2: Festa do Japão 2025 -->
+        <div class="event-card" data-category="cultural" onclick="openEventGallery('festadojapao')">
+          <div class="event-thumb">
+            <div class="img-placeholder"><i class="fa-solid fa-torii-gate"></i></div>
+            <span class="event-badge">2025</span>
+          </div>
+          <div class="event-info">
+            <h3>Festa do Japão 2025</h3>
+            <p>Cobertura da cultura tradicional japonesa, atuações e cosplay em Belém.</p>
+            <span class="event-action">Ver Fotos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Evento 3: Batizados -->
+        <div class="event-card" data-category="social" onclick="openEventGallery('batizados')">
+          <div class="event-thumb">
+            <div class="img-placeholder"><i class="fa-solid fa-baby"></i></div>
+            <span class="event-badge">Sociais</span>
+          </div>
+          <div class="event-info">
+            <h3>Batizados</h3>
+            <p>Fotografia documental de cerimonias e convívio familiar.</p>
+            <span class="event-action">Ver Fotos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Evento 4: Despedida de Solteiro -->
+        <div class="event-card" data-category="social" onclick="openEventGallery('despedida')">
+          <div class="event-thumb">
+            <div class="img-placeholder"><i class="fa-solid fa-champagne-glasses"></i></div>
+            <span class="event-badge">Festas</span>
+          </div>
+          <div class="event-info">
+            <h3>Despedida de Solteiro</h3>
+            <p>Registos dinâmicos e descontraídos de celebrações em grupo.</p>
+            <span class="event-action">Ver Fotos <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL / LIGHTBOX PARA VISUALIZAR AS FOTOS -->
+  <div id="gallery-modal" class="gallery-modal">
+    <div class="modal-content container">
+      <div class="modal-header">
+        <div>
+          <h2 id="modal-title">Título do Evento</h2>
+          <p id="modal-desc">Descrição do evento...</p>
+        </div>
+        <button class="modal-close" onclick="closeGalleryModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div id="modal-images-grid" class="modal-images-grid"></div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
