@@ -161,7 +161,7 @@
     </div>
   </section>
 
-  <!-- MODAL / LIGHTBOX PARA VISUALIZAR AS FOTOS DO EVENTO -->
+ <!-- MODAL / LIGHTBOX PARA VISUALIZAR AS FOTOS DO EVENTO -->
   <div id="gallery-modal" class="gallery-modal">
     <div class="modal-content container">
       <div class="modal-header">
@@ -169,11 +169,14 @@
           <h2 id="modal-title">Título do Evento</h2>
           <p id="modal-desc">Descrição do evento...</p>
         </div>
-        <button class="modal-close" onclick="closeGalleryModal()"><i class="fa-solid fa-xmark"></i></button>
+        <button type="button" class="modal-close" id="btn-close-gallery-modal" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
       <div id="modal-images-grid" class="modal-images-grid"></div>
     </div>
   </div>
+
   <!-- VISUALIZADOR DE ECRÃ INTEIRO (LIGHTBOX PARA AMPLIAR IMAGEM) -->
   <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
     <span class="lightbox-close">&times;</span>
